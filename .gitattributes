@@ -1,0 +1,8 @@
+# Preserve pinned sources and fixtures byte-for-byte across Windows/macOS/Linux.
+* -text
+# Generated upstream sources retain their original whitespace and are hash-verified.
+libsqlite3-sys/sqlite3mc/** -diff -whitespace
+libsqlite3-sys/sqlite3/** -diff -whitespace
+libsqlite3-sys/sqlcipher/** -diff -whitespace
+libsqlite3-sys/bindgen-bindings/** -diff -whitespace
+libsqlite3-sys/wrapper_ext.h -whitespace

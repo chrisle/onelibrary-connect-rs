@@ -1,0 +1,8 @@
+{
+  "node": "v24.11.1",
+  "abi": "137",
+  "sqlite": "3.53.2",
+  "codec": "SQLite3 Multiple Ciphers 2.3.5",
+  "originalQueries": 81,
+  "mutatedQueries": 81
+}

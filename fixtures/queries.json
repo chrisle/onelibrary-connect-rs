@@ -1,0 +1,470 @@
+[
+  {
+    "method": "findTrack",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findTrack",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findTrack",
+    "args": [
+      3
+    ]
+  },
+  {
+    "method": "findTrack",
+    "args": [
+      4
+    ]
+  },
+  {
+    "method": "findTrack",
+    "args": [
+      5
+    ]
+  },
+  {
+    "method": "findTrack",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findCues",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findCues",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findCues",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findPlaylistById",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findPlaylistById",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findPlaylistById",
+    "args": [
+      3
+    ]
+  },
+  {
+    "method": "findPlaylistById",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findPlaylist",
+    "args": []
+  },
+  {
+    "method": "findPlaylist",
+    "args": [
+      0
+    ]
+  },
+  {
+    "method": "findPlaylist",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findPlaylist",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findPlaylist",
+    "args": [
+      3
+    ]
+  },
+  {
+    "method": "findPlaylist",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findPlaylistContents",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findPlaylistContents",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findPlaylistContents",
+    "args": [
+      3
+    ]
+  },
+  {
+    "method": "findPlaylistContents",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findMyTags",
+    "args": []
+  },
+  {
+    "method": "findMyTags",
+    "args": [
+      0
+    ]
+  },
+  {
+    "method": "findMyTags",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findMyTags",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findMyTags",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findMyTagById",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findMyTagById",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findMyTagById",
+    "args": [
+      3
+    ]
+  },
+  {
+    "method": "findMyTagById",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findMyTagContents",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findMyTagContents",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findMyTagContents",
+    "args": [
+      3
+    ]
+  },
+  {
+    "method": "findMyTagContents",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findMyTagsForTrack",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findMyTagsForTrack",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findMyTagsForTrack",
+    "args": [
+      3
+    ]
+  },
+  {
+    "method": "findMyTagsForTrack",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findHistoryContents",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findHistoryContents",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findHistoryContents",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findHotCueBankListCues",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findHotCueBankListCues",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findHotCueBankListCues",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findArtist",
+    "args": [
+      0
+    ]
+  },
+  {
+    "method": "findArtist",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findArtist",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findArtist",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findAlbum",
+    "args": [
+      0
+    ]
+  },
+  {
+    "method": "findAlbum",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findAlbum",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findAlbum",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findGenre",
+    "args": [
+      0
+    ]
+  },
+  {
+    "method": "findGenre",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findGenre",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findGenre",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findKey",
+    "args": [
+      0
+    ]
+  },
+  {
+    "method": "findKey",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findKey",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findKey",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findColor",
+    "args": [
+      0
+    ]
+  },
+  {
+    "method": "findColor",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findColor",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findColor",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findLabel",
+    "args": [
+      0
+    ]
+  },
+  {
+    "method": "findLabel",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findLabel",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findLabel",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findArtwork",
+    "args": [
+      0
+    ]
+  },
+  {
+    "method": "findArtwork",
+    "args": [
+      1
+    ]
+  },
+  {
+    "method": "findArtwork",
+    "args": [
+      2
+    ]
+  },
+  {
+    "method": "findArtwork",
+    "args": [
+      999
+    ]
+  },
+  {
+    "method": "findAllTracks",
+    "args": []
+  },
+  {
+    "method": "findHistorySessions",
+    "args": []
+  },
+  {
+    "method": "findHotCueBankLists",
+    "args": []
+  },
+  {
+    "method": "findMenuItems",
+    "args": []
+  },
+  {
+    "method": "findVisibleCategories",
+    "args": []
+  },
+  {
+    "method": "findVisibleSortOptions",
+    "args": []
+  },
+  {
+    "method": "getProperty",
+    "args": []
+  }
+]

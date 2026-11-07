@@ -1,0 +1,8 @@
+{
+  "source": "https://registry.npmjs.org/better-sqlite3-multiple-ciphers/-/better-sqlite3-multiple-ciphers-12.11.1.tgz",
+  "npm_integrity": "sha512-pG72+3VkUipnmYx4LwQqoOXNG2CJ1HlmDrlvqgr7xQHgsE+cz5rAZEiaJHnUKTHaGfGifggA/C0Sv9qZlUrfow==",
+  "archive_sha256": "01388c78f46ce63c6aec021f67b364cc67bd637edba64f7add0c0230ce5f777a",
+  "sqlite3_c_sha256": "670d8d053176b53a68073b168f8e68fb72db67bdf964a0eb130338e9391198b9",
+  "addon_version": "12.11.1",
+  "gitHead": "484265a83fdbe20cb80d36e32e82b8d554668fca"
+}

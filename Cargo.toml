@@ -1,0 +1,19 @@
+[package]
+name = "onelibrary-connect-rs"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Read-only encrypted OneLibrary exported database queries"
+repository = "https://github.com/chrisle/onelibrary-connect-rs"
+[workspace]
+[dependencies]
+rusqlite = { version = "=0.37.0", default-features = false, features = ["limits"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+flate2 = "1"
+chrono = { version = "0.4", default-features = false, features = ["std", "clock"] }
+[dev-dependencies]
+tempfile = "3"
+sha2 = "0.10"
+[patch.crates-io]
+libsqlite3-sys = { path = "libsqlite3-sys" }

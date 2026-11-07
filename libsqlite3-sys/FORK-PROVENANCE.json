@@ -1,0 +1,11 @@
+{
+  "upstream_crate": "https://static.crates.io/crates/libsqlite3-sys/libsqlite3-sys-0.35.0.crate",
+  "sha256": "133c182a6a2c87864fe97778797e46c7e999672690dc9fa3ee8e241aa4a9c13f",
+  "fork_files": [
+    "Cargo.toml",
+    "build.rs",
+    "build_sqlite3mc.rs",
+    "sqlite3mc/**"
+  ],
+  "retained": "Upstream API, bindings, feature declarations, native sources and licenses retained. Build entrypoint selects reviewed MC implementation; upstream main is retained but never called."
+}

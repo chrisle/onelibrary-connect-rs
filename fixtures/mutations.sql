@@ -1,0 +1,10 @@
+UPDATE content SET title=NULL,length=NULL,rating=NULL,djComment=NULL,path=NULL,fileName=NULL,subtitle=NULL,bitrate=0,trackNo=0,discNo=0,isHotCueAutoLoadOn=-1,isKuvoDeliverStatusOn=0,analysisDataFilePath='x',dateAdded='invalid date',releaseDate='' WHERE content_id=1;
+UPDATE content SET bpmx100=12850.5,dateAdded='2024-01-02T03:04:05.678+02:30',artist_id_artist=999,image_id=999 WHERE content_id=2;
+UPDATE content SET dateAdded='2024-01-02',analysisDataFilePath='' WHERE content_id=3;
+UPDATE content SET dateAdded='2024-01-02 03:04:05.123',analysisDataFilePath='😀.DAT' WHERE content_id=4;
+UPDATE content SET dateAdded='' WHERE content_id=5;
+UPDATE cue SET kind=9,inUsec=1234.5,outUsec=0,cueComment=NULL,colorTableIndex=NULL WHERE cue_id=1;
+UPDATE cue SET outUsec=NULL,colorTableIndex=123 WHERE cue_id=2;
+UPDATE playlist SET playlist_id_parent=0,name=NULL WHERE playlist_id=1;
+UPDATE myTag SET myTag_id_parent=0,name=NULL WHERE myTag_id=1;
+DELETE FROM property;

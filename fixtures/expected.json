@@ -1,0 +1,1458 @@
+[
+  {
+    "method": "findTrack",
+    "args": [
+      1
+    ],
+    "result": {
+      "id": 1,
+      "title": "Test Track",
+      "duration": 300,
+      "bitrate": 320,
+      "tempo": 128,
+      "rating": 5,
+      "comment": "Test comment",
+      "filePath": "/Music/test.mp3",
+      "fileName": "test.mp3",
+      "trackNumber": 1,
+      "discNumber": 1,
+      "sampleRate": 44100,
+      "sampleDepth": 16,
+      "playCount": 10,
+      "year": 2024,
+      "mixName": "Extended Mix",
+      "autoloadHotcues": true,
+      "kuvoPublic": true,
+      "fileSize": 5000000,
+      "analyzePath": "/PIONEER/USBANLZ/P001/0001/ANLZ",
+      "releaseDate": "2024-01-01",
+      "dateAdded": "2024-01-01T00:00:00.000Z",
+      "cueAndLoops": null,
+      "artwork": {
+        "id": 1,
+        "path": "/PIONEER/USBANLZ/P001/0001/artwork.jpg"
+      },
+      "artist": {
+        "id": 1,
+        "name": "Test Artist"
+      },
+      "originalArtist": null,
+      "remixer": {
+        "id": 3,
+        "name": "Remixer One"
+      },
+      "composer": null,
+      "album": {
+        "id": 1,
+        "name": "Test Album"
+      },
+      "label": {
+        "id": 1,
+        "name": "Test Label"
+      },
+      "genre": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "color": {
+        "id": 1,
+        "name": "Pink"
+      },
+      "key": {
+        "id": 1,
+        "name": "Am"
+      }
+    }
+  },
+  {
+    "method": "findTrack",
+    "args": [
+      2
+    ],
+    "result": {
+      "id": 2,
+      "title": "Another Track",
+      "duration": 240,
+      "bitrate": 256,
+      "tempo": 140,
+      "rating": 4,
+      "comment": "",
+      "filePath": "/Music/another.mp3",
+      "fileName": "another.mp3",
+      "trackNumber": 2,
+      "discNumber": 1,
+      "sampleRate": 48000,
+      "sampleDepth": 16,
+      "playCount": 5,
+      "year": 2023,
+      "autoloadHotcues": false,
+      "kuvoPublic": false,
+      "fileSize": 4000000,
+      "analyzePath": "/PIONEER/USBANLZ/P002/0001/ANLZ",
+      "releaseDate": "2023-06-15",
+      "dateAdded": "2023-06-15T00:00:00.000Z",
+      "cueAndLoops": null,
+      "artwork": null,
+      "artist": {
+        "id": 2,
+        "name": "Another Artist"
+      },
+      "originalArtist": null,
+      "remixer": null,
+      "composer": null,
+      "album": {
+        "id": 2,
+        "name": "Another Album"
+      },
+      "label": null,
+      "genre": {
+        "id": 2,
+        "name": "House"
+      },
+      "color": {
+        "id": 2,
+        "name": "Red"
+      },
+      "key": {
+        "id": 2,
+        "name": "C"
+      }
+    }
+  },
+  {
+    "method": "findTrack",
+    "args": [
+      3
+    ],
+    "result": {
+      "id": 3,
+      "title": "Unknown Track",
+      "duration": 180,
+      "bitrate": 128,
+      "tempo": 0,
+      "rating": 0,
+      "comment": "",
+      "filePath": "/Music/unknown.mp3",
+      "fileName": "unknown.mp3",
+      "trackNumber": 1,
+      "discNumber": 1,
+      "sampleRate": 44100,
+      "sampleDepth": 16,
+      "playCount": 0,
+      "autoloadHotcues": false,
+      "kuvoPublic": false,
+      "fileSize": 3000000,
+      "dateAdded": "2024-01-15T00:00:00.000Z",
+      "cueAndLoops": null,
+      "artwork": null,
+      "artist": null,
+      "originalArtist": null,
+      "remixer": null,
+      "composer": null,
+      "album": null,
+      "label": null,
+      "genre": null,
+      "color": null,
+      "key": null
+    }
+  },
+  {
+    "method": "findTrack",
+    "args": [
+      4
+    ],
+    "result": {
+      "id": 4,
+      "title": "Playlist Track A",
+      "duration": 210,
+      "bitrate": 320,
+      "tempo": 130,
+      "rating": 3,
+      "comment": "",
+      "filePath": "/Music/playlist_a.mp3",
+      "fileName": "playlist_a.mp3",
+      "trackNumber": 3,
+      "discNumber": 1,
+      "sampleRate": 44100,
+      "sampleDepth": 16,
+      "playCount": 2,
+      "year": 2024,
+      "autoloadHotcues": true,
+      "kuvoPublic": false,
+      "fileSize": 4500000,
+      "analyzePath": "/PIONEER/USBANLZ/P003/0001/ANLZ",
+      "dateAdded": "2024-01-10T00:00:00.000Z",
+      "cueAndLoops": null,
+      "artwork": {
+        "id": 1,
+        "path": "/PIONEER/USBANLZ/P001/0001/artwork.jpg"
+      },
+      "artist": {
+        "id": 1,
+        "name": "Test Artist"
+      },
+      "originalArtist": null,
+      "remixer": null,
+      "composer": null,
+      "album": {
+        "id": 1,
+        "name": "Test Album"
+      },
+      "label": {
+        "id": 1,
+        "name": "Test Label"
+      },
+      "genre": {
+        "id": 1,
+        "name": "Electronic"
+      },
+      "color": {
+        "id": 3,
+        "name": "Orange"
+      },
+      "key": {
+        "id": 3,
+        "name": "Fm"
+      }
+    }
+  },
+  {
+    "method": "findTrack",
+    "args": [
+      5
+    ],
+    "result": {
+      "id": 5,
+      "title": "Playlist Track B",
+      "duration": 225,
+      "bitrate": 320,
+      "tempo": 135,
+      "rating": 4,
+      "comment": "",
+      "filePath": "/Music/playlist_b.mp3",
+      "fileName": "playlist_b.mp3",
+      "trackNumber": 4,
+      "discNumber": 1,
+      "sampleRate": 44100,
+      "sampleDepth": 16,
+      "playCount": 3,
+      "year": 2024,
+      "autoloadHotcues": true,
+      "kuvoPublic": false,
+      "fileSize": 4800000,
+      "analyzePath": "/PIONEER/USBANLZ/P004/0001/ANLZ",
+      "dateAdded": "2024-01-10T00:00:00.000Z",
+      "cueAndLoops": null,
+      "artwork": {
+        "id": 2,
+        "path": "/PIONEER/USBANLZ/P002/0001/artwork.jpg"
+      },
+      "artist": {
+        "id": 2,
+        "name": "Another Artist"
+      },
+      "originalArtist": null,
+      "remixer": null,
+      "composer": null,
+      "album": {
+        "id": 2,
+        "name": "Another Album"
+      },
+      "label": {
+        "id": 2,
+        "name": "Another Label"
+      },
+      "genre": {
+        "id": 2,
+        "name": "House"
+      },
+      "color": {
+        "id": 4,
+        "name": "Yellow"
+      },
+      "key": {
+        "id": 1,
+        "name": "Am"
+      }
+    }
+  },
+  {
+    "method": "findTrack",
+    "args": [
+      999
+    ],
+    "result": null
+  },
+  {
+    "method": "findCues",
+    "args": [
+      1
+    ],
+    "result": [
+      {
+        "type": "cue_point",
+        "offset": 0,
+        "label": "Start",
+        "color": null
+      },
+      {
+        "type": "hot_cue",
+        "offset": 32000,
+        "button": 1,
+        "label": "Drop",
+        "color": 2
+      },
+      {
+        "type": "loop",
+        "offset": 64000,
+        "length": 16000,
+        "label": "Build",
+        "color": null
+      },
+      {
+        "type": "hot_loop",
+        "offset": 128000,
+        "length": 8000,
+        "button": 2,
+        "label": "Hook",
+        "color": 3
+      }
+    ]
+  },
+  {
+    "method": "findCues",
+    "args": [
+      2
+    ],
+    "result": []
+  },
+  {
+    "method": "findCues",
+    "args": [
+      999
+    ],
+    "result": []
+  },
+  {
+    "method": "findPlaylistById",
+    "args": [
+      1
+    ],
+    "result": {
+      "id": 1,
+      "name": "My Favorites",
+      "isFolder": false,
+      "parentId": null
+    }
+  },
+  {
+    "method": "findPlaylistById",
+    "args": [
+      2
+    ],
+    "result": {
+      "id": 2,
+      "name": "DJ Sets",
+      "isFolder": true,
+      "parentId": null
+    }
+  },
+  {
+    "method": "findPlaylistById",
+    "args": [
+      3
+    ],
+    "result": {
+      "id": 3,
+      "name": "Club Night",
+      "isFolder": false,
+      "parentId": 2
+    }
+  },
+  {
+    "method": "findPlaylistById",
+    "args": [
+      999
+    ],
+    "result": null
+  },
+  {
+    "method": "findPlaylist",
+    "args": [],
+    "result": {
+      "folders": [
+        {
+          "id": 2,
+          "name": "DJ Sets",
+          "isFolder": true,
+          "parentId": null
+        }
+      ],
+      "playlists": [
+        {
+          "id": 1,
+          "name": "My Favorites",
+          "isFolder": false,
+          "parentId": null
+        },
+        {
+          "id": 5,
+          "name": "Empty Playlist",
+          "isFolder": false,
+          "parentId": null
+        }
+      ],
+      "trackEntries": []
+    }
+  },
+  {
+    "method": "findPlaylist",
+    "args": [
+      0
+    ],
+    "result": {
+      "folders": [],
+      "playlists": [],
+      "trackEntries": []
+    }
+  },
+  {
+    "method": "findPlaylist",
+    "args": [
+      1
+    ],
+    "result": {
+      "folders": [],
+      "playlists": [],
+      "trackEntries": [
+        {
+          "id": 0,
+          "sortIndex": 1,
+          "playlistId": 1,
+          "trackId": 1
+        },
+        {
+          "id": 1,
+          "sortIndex": 2,
+          "playlistId": 1,
+          "trackId": 2
+        },
+        {
+          "id": 2,
+          "sortIndex": 3,
+          "playlistId": 1,
+          "trackId": 4
+        }
+      ]
+    }
+  },
+  {
+    "method": "findPlaylist",
+    "args": [
+      2
+    ],
+    "result": {
+      "folders": [],
+      "playlists": [
+        {
+          "id": 3,
+          "name": "Club Night",
+          "isFolder": false,
+          "parentId": 2
+        },
+        {
+          "id": 4,
+          "name": "Festival",
+          "isFolder": false,
+          "parentId": 2
+        }
+      ],
+      "trackEntries": []
+    }
+  },
+  {
+    "method": "findPlaylist",
+    "args": [
+      3
+    ],
+    "result": {
+      "folders": [],
+      "playlists": [],
+      "trackEntries": [
+        {
+          "id": 0,
+          "sortIndex": 1,
+          "playlistId": 3,
+          "trackId": 1
+        },
+        {
+          "id": 1,
+          "sortIndex": 2,
+          "playlistId": 3,
+          "trackId": 4
+        },
+        {
+          "id": 2,
+          "sortIndex": 3,
+          "playlistId": 3,
+          "trackId": 5
+        }
+      ]
+    }
+  },
+  {
+    "method": "findPlaylist",
+    "args": [
+      999
+    ],
+    "result": {
+      "folders": [],
+      "playlists": [],
+      "trackEntries": []
+    }
+  },
+  {
+    "method": "findPlaylistContents",
+    "args": [
+      1
+    ],
+    "result": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "method": "findPlaylistContents",
+    "args": [
+      2
+    ],
+    "result": []
+  },
+  {
+    "method": "findPlaylistContents",
+    "args": [
+      3
+    ],
+    "result": [
+      1,
+      4,
+      5
+    ]
+  },
+  {
+    "method": "findPlaylistContents",
+    "args": [
+      999
+    ],
+    "result": []
+  },
+  {
+    "method": "findMyTags",
+    "args": [],
+    "result": {
+      "folders": [
+        {
+          "id": 2,
+          "name": "Energy",
+          "isFolder": true,
+          "parentId": null
+        }
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Favorites",
+          "isFolder": false,
+          "parentId": null
+        },
+        {
+          "id": 5,
+          "name": "Classics",
+          "isFolder": false,
+          "parentId": null
+        }
+      ]
+    }
+  },
+  {
+    "method": "findMyTags",
+    "args": [
+      0
+    ],
+    "result": {
+      "folders": [],
+      "tags": []
+    }
+  },
+  {
+    "method": "findMyTags",
+    "args": [
+      1
+    ],
+    "result": {
+      "folders": [],
+      "tags": []
+    }
+  },
+  {
+    "method": "findMyTags",
+    "args": [
+      2
+    ],
+    "result": {
+      "folders": [],
+      "tags": [
+        {
+          "id": 3,
+          "name": "High Energy",
+          "isFolder": false,
+          "parentId": 2
+        },
+        {
+          "id": 4,
+          "name": "Low Energy",
+          "isFolder": false,
+          "parentId": 2
+        }
+      ]
+    }
+  },
+  {
+    "method": "findMyTags",
+    "args": [
+      999
+    ],
+    "result": {
+      "folders": [],
+      "tags": []
+    }
+  },
+  {
+    "method": "findMyTagById",
+    "args": [
+      1
+    ],
+    "result": {
+      "id": 1,
+      "name": "Favorites",
+      "isFolder": false,
+      "parentId": null
+    }
+  },
+  {
+    "method": "findMyTagById",
+    "args": [
+      2
+    ],
+    "result": {
+      "id": 2,
+      "name": "Energy",
+      "isFolder": true,
+      "parentId": null
+    }
+  },
+  {
+    "method": "findMyTagById",
+    "args": [
+      3
+    ],
+    "result": {
+      "id": 3,
+      "name": "High Energy",
+      "isFolder": false,
+      "parentId": 2
+    }
+  },
+  {
+    "method": "findMyTagById",
+    "args": [
+      999
+    ],
+    "result": null
+  },
+  {
+    "method": "findMyTagContents",
+    "args": [
+      1
+    ],
+    "result": [
+      1,
+      4
+    ]
+  },
+  {
+    "method": "findMyTagContents",
+    "args": [
+      2
+    ],
+    "result": []
+  },
+  {
+    "method": "findMyTagContents",
+    "args": [
+      3
+    ],
+    "result": [
+      1,
+      4
+    ]
+  },
+  {
+    "method": "findMyTagContents",
+    "args": [
+      999
+    ],
+    "result": []
+  },
+  {
+    "method": "findMyTagsForTrack",
+    "args": [
+      1
+    ],
+    "result": [
+      {
+        "id": 1,
+        "name": "Favorites",
+        "isFolder": false,
+        "parentId": null
+      },
+      {
+        "id": 3,
+        "name": "High Energy",
+        "isFolder": false,
+        "parentId": 2
+      },
+      {
+        "id": 5,
+        "name": "Classics",
+        "isFolder": false,
+        "parentId": null
+      }
+    ]
+  },
+  {
+    "method": "findMyTagsForTrack",
+    "args": [
+      2
+    ],
+    "result": [
+      {
+        "id": 4,
+        "name": "Low Energy",
+        "isFolder": false,
+        "parentId": 2
+      },
+      {
+        "id": 5,
+        "name": "Classics",
+        "isFolder": false,
+        "parentId": null
+      }
+    ]
+  },
+  {
+    "method": "findMyTagsForTrack",
+    "args": [
+      3
+    ],
+    "result": []
+  },
+  {
+    "method": "findMyTagsForTrack",
+    "args": [
+      999
+    ],
+    "result": []
+  },
+  {
+    "method": "findHistoryContents",
+    "args": [
+      1
+    ],
+    "result": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "method": "findHistoryContents",
+    "args": [
+      2
+    ],
+    "result": [
+      4,
+      5,
+      1
+    ]
+  },
+  {
+    "method": "findHistoryContents",
+    "args": [
+      999
+    ],
+    "result": []
+  },
+  {
+    "method": "findHotCueBankListCues",
+    "args": [
+      1
+    ],
+    "result": [
+      2,
+      4
+    ]
+  },
+  {
+    "method": "findHotCueBankListCues",
+    "args": [
+      2
+    ],
+    "result": [
+      5,
+      6
+    ]
+  },
+  {
+    "method": "findHotCueBankListCues",
+    "args": [
+      999
+    ],
+    "result": []
+  },
+  {
+    "method": "findArtist",
+    "args": [
+      0
+    ],
+    "result": null
+  },
+  {
+    "method": "findArtist",
+    "args": [
+      1
+    ],
+    "result": {
+      "id": 1,
+      "name": "Test Artist"
+    }
+  },
+  {
+    "method": "findArtist",
+    "args": [
+      2
+    ],
+    "result": {
+      "id": 2,
+      "name": "Another Artist"
+    }
+  },
+  {
+    "method": "findArtist",
+    "args": [
+      999
+    ],
+    "result": null
+  },
+  {
+    "method": "findAlbum",
+    "args": [
+      0
+    ],
+    "result": null
+  },
+  {
+    "method": "findAlbum",
+    "args": [
+      1
+    ],
+    "result": {
+      "id": 1,
+      "name": "Test Album"
+    }
+  },
+  {
+    "method": "findAlbum",
+    "args": [
+      2
+    ],
+    "result": {
+      "id": 2,
+      "name": "Another Album"
+    }
+  },
+  {
+    "method": "findAlbum",
+    "args": [
+      999
+    ],
+    "result": null
+  },
+  {
+    "method": "findGenre",
+    "args": [
+      0
+    ],
+    "result": null
+  },
+  {
+    "method": "findGenre",
+    "args": [
+      1
+    ],
+    "result": {
+      "id": 1,
+      "name": "Electronic"
+    }
+  },
+  {
+    "method": "findGenre",
+    "args": [
+      2
+    ],
+    "result": {
+      "id": 2,
+      "name": "House"
+    }
+  },
+  {
+    "method": "findGenre",
+    "args": [
+      999
+    ],
+    "result": null
+  },
+  {
+    "method": "findKey",
+    "args": [
+      0
+    ],
+    "result": null
+  },
+  {
+    "method": "findKey",
+    "args": [
+      1
+    ],
+    "result": {
+      "id": 1,
+      "name": "Am"
+    }
+  },
+  {
+    "method": "findKey",
+    "args": [
+      2
+    ],
+    "result": {
+      "id": 2,
+      "name": "C"
+    }
+  },
+  {
+    "method": "findKey",
+    "args": [
+      999
+    ],
+    "result": null
+  },
+  {
+    "method": "findColor",
+    "args": [
+      0
+    ],
+    "result": null
+  },
+  {
+    "method": "findColor",
+    "args": [
+      1
+    ],
+    "result": {
+      "id": 1,
+      "name": "Pink"
+    }
+  },
+  {
+    "method": "findColor",
+    "args": [
+      2
+    ],
+    "result": {
+      "id": 2,
+      "name": "Red"
+    }
+  },
+  {
+    "method": "findColor",
+    "args": [
+      999
+    ],
+    "result": null
+  },
+  {
+    "method": "findLabel",
+    "args": [
+      0
+    ],
+    "result": null
+  },
+  {
+    "method": "findLabel",
+    "args": [
+      1
+    ],
+    "result": {
+      "id": 1,
+      "name": "Test Label"
+    }
+  },
+  {
+    "method": "findLabel",
+    "args": [
+      2
+    ],
+    "result": {
+      "id": 2,
+      "name": "Another Label"
+    }
+  },
+  {
+    "method": "findLabel",
+    "args": [
+      999
+    ],
+    "result": null
+  },
+  {
+    "method": "findArtwork",
+    "args": [
+      0
+    ],
+    "result": null
+  },
+  {
+    "method": "findArtwork",
+    "args": [
+      1
+    ],
+    "result": {
+      "id": 1,
+      "path": "/PIONEER/USBANLZ/P001/0001/artwork.jpg"
+    }
+  },
+  {
+    "method": "findArtwork",
+    "args": [
+      2
+    ],
+    "result": {
+      "id": 2,
+      "path": "/PIONEER/USBANLZ/P002/0001/artwork.jpg"
+    }
+  },
+  {
+    "method": "findArtwork",
+    "args": [
+      999
+    ],
+    "result": null
+  },
+  {
+    "method": "findAllTracks",
+    "args": [],
+    "result": [
+      {
+        "id": 1,
+        "title": "Test Track",
+        "duration": 300,
+        "bitrate": 320,
+        "tempo": 128,
+        "rating": 5,
+        "comment": "Test comment",
+        "filePath": "/Music/test.mp3",
+        "fileName": "test.mp3",
+        "trackNumber": 1,
+        "discNumber": 1,
+        "sampleRate": 44100,
+        "sampleDepth": 16,
+        "playCount": 10,
+        "year": 2024,
+        "mixName": "Extended Mix",
+        "autoloadHotcues": true,
+        "kuvoPublic": true,
+        "fileSize": 5000000,
+        "analyzePath": "/PIONEER/USBANLZ/P001/0001/ANLZ",
+        "releaseDate": "2024-01-01",
+        "dateAdded": "2024-01-01T00:00:00.000Z",
+        "cueAndLoops": null,
+        "artwork": {
+          "id": 1,
+          "path": "/PIONEER/USBANLZ/P001/0001/artwork.jpg"
+        },
+        "artist": {
+          "id": 1,
+          "name": "Test Artist"
+        },
+        "originalArtist": null,
+        "remixer": {
+          "id": 3,
+          "name": "Remixer One"
+        },
+        "composer": null,
+        "album": {
+          "id": 1,
+          "name": "Test Album"
+        },
+        "label": {
+          "id": 1,
+          "name": "Test Label"
+        },
+        "genre": {
+          "id": 1,
+          "name": "Electronic"
+        },
+        "color": {
+          "id": 1,
+          "name": "Pink"
+        },
+        "key": {
+          "id": 1,
+          "name": "Am"
+        }
+      },
+      {
+        "id": 2,
+        "title": "Another Track",
+        "duration": 240,
+        "bitrate": 256,
+        "tempo": 140,
+        "rating": 4,
+        "comment": "",
+        "filePath": "/Music/another.mp3",
+        "fileName": "another.mp3",
+        "trackNumber": 2,
+        "discNumber": 1,
+        "sampleRate": 48000,
+        "sampleDepth": 16,
+        "playCount": 5,
+        "year": 2023,
+        "autoloadHotcues": false,
+        "kuvoPublic": false,
+        "fileSize": 4000000,
+        "analyzePath": "/PIONEER/USBANLZ/P002/0001/ANLZ",
+        "releaseDate": "2023-06-15",
+        "dateAdded": "2023-06-15T00:00:00.000Z",
+        "cueAndLoops": null,
+        "artwork": null,
+        "artist": {
+          "id": 2,
+          "name": "Another Artist"
+        },
+        "originalArtist": null,
+        "remixer": null,
+        "composer": null,
+        "album": {
+          "id": 2,
+          "name": "Another Album"
+        },
+        "label": null,
+        "genre": {
+          "id": 2,
+          "name": "House"
+        },
+        "color": {
+          "id": 2,
+          "name": "Red"
+        },
+        "key": {
+          "id": 2,
+          "name": "C"
+        }
+      },
+      {
+        "id": 3,
+        "title": "Unknown Track",
+        "duration": 180,
+        "bitrate": 128,
+        "tempo": 0,
+        "rating": 0,
+        "comment": "",
+        "filePath": "/Music/unknown.mp3",
+        "fileName": "unknown.mp3",
+        "trackNumber": 1,
+        "discNumber": 1,
+        "sampleRate": 44100,
+        "sampleDepth": 16,
+        "playCount": 0,
+        "autoloadHotcues": false,
+        "kuvoPublic": false,
+        "fileSize": 3000000,
+        "dateAdded": "2024-01-15T00:00:00.000Z",
+        "cueAndLoops": null,
+        "artwork": null,
+        "artist": null,
+        "originalArtist": null,
+        "remixer": null,
+        "composer": null,
+        "album": null,
+        "label": null,
+        "genre": null,
+        "color": null,
+        "key": null
+      },
+      {
+        "id": 4,
+        "title": "Playlist Track A",
+        "duration": 210,
+        "bitrate": 320,
+        "tempo": 130,
+        "rating": 3,
+        "comment": "",
+        "filePath": "/Music/playlist_a.mp3",
+        "fileName": "playlist_a.mp3",
+        "trackNumber": 3,
+        "discNumber": 1,
+        "sampleRate": 44100,
+        "sampleDepth": 16,
+        "playCount": 2,
+        "year": 2024,
+        "autoloadHotcues": true,
+        "kuvoPublic": false,
+        "fileSize": 4500000,
+        "analyzePath": "/PIONEER/USBANLZ/P003/0001/ANLZ",
+        "dateAdded": "2024-01-10T00:00:00.000Z",
+        "cueAndLoops": null,
+        "artwork": {
+          "id": 1,
+          "path": "/PIONEER/USBANLZ/P001/0001/artwork.jpg"
+        },
+        "artist": {
+          "id": 1,
+          "name": "Test Artist"
+        },
+        "originalArtist": null,
+        "remixer": null,
+        "composer": null,
+        "album": {
+          "id": 1,
+          "name": "Test Album"
+        },
+        "label": {
+          "id": 1,
+          "name": "Test Label"
+        },
+        "genre": {
+          "id": 1,
+          "name": "Electronic"
+        },
+        "color": {
+          "id": 3,
+          "name": "Orange"
+        },
+        "key": {
+          "id": 3,
+          "name": "Fm"
+        }
+      },
+      {
+        "id": 5,
+        "title": "Playlist Track B",
+        "duration": 225,
+        "bitrate": 320,
+        "tempo": 135,
+        "rating": 4,
+        "comment": "",
+        "filePath": "/Music/playlist_b.mp3",
+        "fileName": "playlist_b.mp3",
+        "trackNumber": 4,
+        "discNumber": 1,
+        "sampleRate": 44100,
+        "sampleDepth": 16,
+        "playCount": 3,
+        "year": 2024,
+        "autoloadHotcues": true,
+        "kuvoPublic": false,
+        "fileSize": 4800000,
+        "analyzePath": "/PIONEER/USBANLZ/P004/0001/ANLZ",
+        "dateAdded": "2024-01-10T00:00:00.000Z",
+        "cueAndLoops": null,
+        "artwork": {
+          "id": 2,
+          "path": "/PIONEER/USBANLZ/P002/0001/artwork.jpg"
+        },
+        "artist": {
+          "id": 2,
+          "name": "Another Artist"
+        },
+        "originalArtist": null,
+        "remixer": null,
+        "composer": null,
+        "album": {
+          "id": 2,
+          "name": "Another Album"
+        },
+        "label": {
+          "id": 2,
+          "name": "Another Label"
+        },
+        "genre": {
+          "id": 2,
+          "name": "House"
+        },
+        "color": {
+          "id": 4,
+          "name": "Yellow"
+        },
+        "key": {
+          "id": 1,
+          "name": "Am"
+        }
+      }
+    ]
+  },
+  {
+    "method": "findHistorySessions",
+    "args": [],
+    "result": [
+      {
+        "id": 1,
+        "name": "2024-01-01",
+        "parentId": null
+      },
+      {
+        "id": 2,
+        "name": "2024-01-02",
+        "parentId": null
+      },
+      {
+        "id": 3,
+        "name": "2024-01-03",
+        "parentId": null
+      }
+    ]
+  },
+  {
+    "method": "findHotCueBankLists",
+    "args": [],
+    "result": [
+      {
+        "id": 1,
+        "name": "Bank A",
+        "parentId": null
+      },
+      {
+        "id": 2,
+        "name": "Bank B",
+        "parentId": null
+      }
+    ]
+  },
+  {
+    "method": "findMenuItems",
+    "args": [],
+    "result": [
+      {
+        "id": 1,
+        "kind": 128,
+        "name": "Genre"
+      },
+      {
+        "id": 2,
+        "kind": 129,
+        "name": "Artist"
+      },
+      {
+        "id": 3,
+        "kind": 130,
+        "name": "Album"
+      },
+      {
+        "id": 4,
+        "kind": 131,
+        "name": "Track"
+      },
+      {
+        "id": 5,
+        "kind": 139,
+        "name": "Key"
+      }
+    ]
+  },
+  {
+    "method": "findVisibleCategories",
+    "args": [],
+    "result": [
+      {
+        "id": 1,
+        "menuItemId": 1,
+        "name": "Genre",
+        "kind": 128,
+        "isVisible": true
+      },
+      {
+        "id": 2,
+        "menuItemId": 2,
+        "name": "Artist",
+        "kind": 129,
+        "isVisible": true
+      },
+      {
+        "id": 3,
+        "menuItemId": 3,
+        "name": "Album",
+        "kind": 130,
+        "isVisible": true
+      },
+      {
+        "id": 5,
+        "menuItemId": 5,
+        "name": "Key",
+        "kind": 139,
+        "isVisible": true
+      }
+    ]
+  },
+  {
+    "method": "findVisibleSortOptions",
+    "args": [],
+    "result": [
+      {
+        "id": 1,
+        "menuItemId": 1,
+        "name": "Genre",
+        "kind": 128,
+        "isVisible": true,
+        "isSelectedAsSubColumn": false
+      },
+      {
+        "id": 2,
+        "menuItemId": 2,
+        "name": "Artist",
+        "kind": 129,
+        "isVisible": true,
+        "isSelectedAsSubColumn": true
+      },
+      {
+        "id": 4,
+        "menuItemId": 4,
+        "name": "Track",
+        "kind": 131,
+        "isVisible": true,
+        "isSelectedAsSubColumn": false
+      }
+    ]
+  },
+  {
+    "method": "getProperty",
+    "args": [],
+    "result": {
+      "deviceName": "Test Device",
+      "dbVersion": "1.0.0",
+      "numberOfContents": 5,
+      "createdDate": "2024-01-01 00:00:00",
+      "backgroundColorType": 0
+    }
+  }
+]

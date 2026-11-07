@@ -1,0 +1,18 @@
+{
+  "source": "https://github.com/chrisle/onelibrary-connect",
+  "version": "1.1.6",
+  "commit": "ac3edd3b8a18f7649d336ebd56d28b15923a05d6",
+  "fixture_sha256": "7a47f162edaef42fe03fad836013ad4fe3e1b1cc8f5604173a97ece74d8f08bb",
+  "source_sha256": {
+    "schema.ts": "974892ac6948dc6af5a36eb4d83405aff377ec0e46f67658562febba4453d506",
+    "database-adapter.ts": "f3eaaa249c3193a5341e56567711b867c1ca3bb2101ec779bcb9489b36dc958d",
+    "entities.ts": "3142935d8ab841b5b1dbe90d5478c7233aecac442858e6a088afa3cca05efd91",
+    "connection.ts": "e5dfd78dda7b7738bd3faa908152f5bd8a115dbb776b3d368388cf8448c2095a",
+    "types.ts": "2ac7dc416aa4e94ee9271c6ef6a981ac0f78de744e17fd66f6212f61b18bf0b1",
+    "adapter.ts": "f2d3ca980cdde65189827ed96984cc2d7ab66f3f8f0ab2dae6579d2ae0c20719",
+    "index.ts": "6eab458ada6c9320237b5708f5b321ecc7a595bb8b8021535611f0e663c898ad",
+    "encryption.ts": "a95a0581e250f83009fb5574e83ccb4a4a7f9e048f37d3d8e1cb434a9e8dedcb"
+  },
+  "fixture_description": "Original MIT test fixture described as a mock encrypted OneLibrary DB; synthetic.sql dumps its redistributable synthetic schema/data. No personal library data.",
+  "reference": "Actual original TS executed with isolated locally built Node24 addon12.11.1. No skipped native tests counted."
+}
