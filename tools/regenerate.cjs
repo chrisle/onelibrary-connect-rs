@@ -7,6 +7,7 @@ run(process.execPath,[path.join(__dirname,'differential.cjs')]);
 run(process.execPath,[path.join(__dirname,'differential.cjs'),'--edges']);
 run(process.execPath,[path.join(__dirname,'dump-fixture.cjs')]);
 run(process.execPath,[path.join(__dirname,'calendar-reference.cjs')]);
+run(process.execPath,[path.join(__dirname,'extension-reference.cjs')]);
 const scratch=fs.mkdtempSync(path.join(os.tmpdir(),'onelibrary-rust-writer-'));
 try{
  const file=path.join(scratch,'synthetic.db');run('cargo',['run','--locked','--example','generate_fixture','--',file]);

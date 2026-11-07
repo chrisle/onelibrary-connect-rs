@@ -89,7 +89,10 @@ for the first query; repeated `close()` is harmless; individual SQLite values
 are limited to16MiB, each query to1million rows and128MiB aggregate text; invalid
 UTF8 and BLOBs in the documented scalar schema return an error. Row IDs beyond
 JavaScript's safe integer range retain Rust integer precision. These bounds and
-strict schema errors are not silent truncation. TS queries without ORDER BY keep
+strict schema errors are not silent truncation. Queries project only mapped
+scalar fields, so unknown schema extension columns (including BLOBs) are ignored
+without decoding or allocating their payloads. BLOBs in mapped scalar fields
+still return an explicit query error. TS queries without ORDER BY keep
 their original SQLite query order; only explicitly ordered queries promise order.
 
 ## Verification
@@ -102,7 +105,7 @@ npm ci --prefix tools --no-audit --no-fund
 node tools/regenerate.cjs
 ```
 
-Eleven tests pass locally on macOS ARM64. They include two actual pinned-TS
+Thirteen tests pass locally on macOS ARM64. They include two actual pinned-TS
 comparisons covering81 query cases each, read-only hash/write-denial, missing/
 wrong-key/corrupt/truncated/plaintext/schema failures, encrypted WAL commit and
 rollback visibility, synthetic reproduction, UTC/local DST date behavior, and
@@ -116,7 +119,10 @@ The original TypeScript adapter runs with a fresh native addon12.11.1 built
 inside `tools/node_modules` for Node24; no original checkout dependencies were
 modified, and no ABI-skipped test run is counted. `tools/node-evidence.json`
 records the actual addon engine. Both original encrypted fixture and nullable/
-fractional/orphan/Unicode/date/cue edge mutations match Rust. A separately
+fractional/orphan/Unicode/date/cue edge mutations match Rust.
+Actual pinned TypeScript also reads disposable encrypted schema extensions with
+BLOB columns in every adapter table and retains all81 base query outputs; Rust
+matches those outputs and separately rejects known scalar BLOB corruption. A
 Rust-generated encrypted fixture is read by original TS and matches all81 base
 query cases. Only numeric JSON representation is normalized (`128` versus
 `128.0`); field presence, nulls, values and array order remain compared.

@@ -4,7 +4,10 @@ use rusqlite::{types::ValueRef, Connection, Params};
 use serde_json::{json, Value};
 use std::path::Path;
 
-const TRACK_SELECT:&str="SELECT c.*,a.name AS artistName,al.name AS albumName,g.name AS genreName,k.name AS keyName,col.name AS colorName,lbl.name AS labelName,img.path AS artworkPath,remix.name AS remixerName,orig.name AS originalArtistName,comp.name AS composerName FROM content c LEFT JOIN artist a ON c.artist_id_artist=a.artist_id LEFT JOIN album al ON c.album_id=al.album_id LEFT JOIN genre g ON c.genre_id=g.genre_id LEFT JOIN key k ON c.key_id=k.key_id LEFT JOIN color col ON c.color_id=col.color_id LEFT JOIN label lbl ON c.label_id=lbl.label_id LEFT JOIN image img ON c.image_id=img.image_id LEFT JOIN artist remix ON c.artist_id_remixer=remix.artist_id LEFT JOIN artist orig ON c.artist_id_originalArtist=orig.artist_id LEFT JOIN artist comp ON c.artist_id_composer=comp.artist_id";
+// Project only mapped scalar fields. Future SQLite schema extensions may carry
+// BLOBs; they must not break unrelated reads or consume result memory. Known
+// scalar BLOBs still reach query() and fail explicitly.
+const TRACK_SELECT:&str="SELECT c.content_id,c.title,c.length,c.bitrate,c.bpmx100,c.rating,c.djComment,c.path,c.fileName,c.trackNo,c.discNo,c.samplingRate,c.bitDepth,c.djPlayCount,c.releaseYear,c.subtitle,c.isHotCueAutoLoadOn,c.isKuvoDeliverStatusOn,c.fileSize,c.analysisDataFilePath,c.releaseDate,c.dateAdded,c.image_id,c.artist_id_artist,c.artist_id_originalArtist,c.artist_id_remixer,c.artist_id_composer,c.album_id,c.label_id,c.genre_id,c.color_id,c.key_id,a.name AS artistName,al.name AS albumName,g.name AS genreName,k.name AS keyName,col.name AS colorName,lbl.name AS labelName,img.path AS artworkPath,remix.name AS remixerName,orig.name AS originalArtistName,comp.name AS composerName FROM content c LEFT JOIN artist a ON c.artist_id_artist=a.artist_id LEFT JOIN album al ON c.album_id=al.album_id LEFT JOIN genre g ON c.genre_id=g.genre_id LEFT JOIN key k ON c.key_id=k.key_id LEFT JOIN color col ON c.color_id=col.color_id LEFT JOIN label lbl ON c.label_id=lbl.label_id LEFT JOIN image img ON c.image_id=img.image_id LEFT JOIN artist remix ON c.artist_id_remixer=remix.artist_id LEFT JOIN artist orig ON c.artist_id_originalArtist=orig.artist_id LEFT JOIN artist comp ON c.artist_id_composer=comp.artist_id";
 pub trait DatabaseAdapter {
     fn database_type(&self) -> DatabaseType;
     fn find_track(&self, id: i64) -> Result<Option<Track>>;
@@ -113,7 +116,7 @@ impl OneLibraryAdapter {
             .collect()
     }
     pub fn find_cues(&self, id: i64) -> Result<Vec<CueAndLoop>> {
-        self.query("SELECT * FROM cue WHERE content_id=?", [id])?
+        self.query("SELECT content_id,inUsec,outUsec,kind,cueComment,colorTableIndex FROM cue WHERE content_id=?", [id])?
             .iter()
             .map(|r| {
                 let offset = number(r, "inUsec") / 1000.;
@@ -155,17 +158,17 @@ impl OneLibraryAdapter {
     }
     pub fn find_playlist_by_id(&self, id: i64) -> Result<Option<Playlist>> {
         Ok(self
-            .query("SELECT * FROM playlist WHERE playlist_id=?", [id])?
+            .query("SELECT playlist_id,name,attribute,playlist_id_parent FROM playlist WHERE playlist_id=?", [id])?
             .first()
             .map(playlist))
     }
     pub fn find_playlist(&self, id: Option<i64>) -> Result<PlaylistQueryResult> {
         let rows = match id {
             None => self.query(
-                "SELECT * FROM playlist WHERE playlist_id_parent IS NULL",
+                "SELECT playlist_id,name,attribute,playlist_id_parent FROM playlist WHERE playlist_id_parent IS NULL",
                 [],
             )?,
-            Some(id) => self.query("SELECT * FROM playlist WHERE playlist_id_parent=?", [id])?,
+            Some(id) => self.query("SELECT playlist_id,name,attribute,playlist_id_parent FROM playlist WHERE playlist_id_parent=?", [id])?,
         };
         let (mut folders, mut playlists) = (Vec::new(), Vec::new());
         for row in rows {
@@ -180,7 +183,7 @@ impl OneLibraryAdapter {
         if let Some(id) = id {
             for (index, row) in self
                 .query(
-                    "SELECT * FROM playlist_content WHERE playlist_id=? ORDER BY sequenceNo",
+                    "SELECT playlist_id,content_id,sequenceNo FROM playlist_content WHERE playlist_id=? ORDER BY sequenceNo",
                     [id],
                 )?
                 .iter()
@@ -209,7 +212,10 @@ impl OneLibraryAdapter {
     }
     fn reference(&self, table: &str, column: &str, id: i64) -> Result<Option<NamedEntity>> {
         Ok(self
-            .query(&format!("SELECT * FROM {table} WHERE {column}=?"), [id])?
+            .query(
+                &format!("SELECT {column},name FROM {table} WHERE {column}=?"),
+                [id],
+            )?
             .first()
             .map(|r| NamedEntity {
                 id: integer(r, column),
@@ -236,7 +242,7 @@ impl OneLibraryAdapter {
     }
     pub fn find_artwork(&self, id: i64) -> Result<Option<Artwork>> {
         Ok(self
-            .query("SELECT * FROM image WHERE image_id=?", [id])?
+            .query("SELECT image_id,path FROM image WHERE image_id=?", [id])?
             .first()
             .map(|r| Artwork {
                 id: integer(r, "image_id"),
@@ -251,7 +257,7 @@ impl OneLibraryAdapter {
             .collect())
     }
     pub fn find_my_tags(&self, id: Option<i64>) -> Result<MyTagQueryResult> {
-        let rows=match id{None=>self.query("SELECT * FROM myTag WHERE myTag_id_parent IS NULL OR myTag_id_parent=0 ORDER BY sequenceNo",[])?,Some(id)=>self.query("SELECT * FROM myTag WHERE myTag_id_parent=? ORDER BY sequenceNo",[id])?};
+        let rows=match id{None=>self.query("SELECT myTag_id,name,attribute,myTag_id_parent,sequenceNo FROM myTag WHERE myTag_id_parent IS NULL OR myTag_id_parent=0 ORDER BY sequenceNo",[])?,Some(id)=>self.query("SELECT myTag_id,name,attribute,myTag_id_parent,sequenceNo FROM myTag WHERE myTag_id_parent=? ORDER BY sequenceNo",[id])?};
         let (mut folders, mut tags) = (Vec::new(), Vec::new());
         for row in rows {
             let t = my_tag(&row);
@@ -265,7 +271,7 @@ impl OneLibraryAdapter {
     }
     pub fn find_my_tag_by_id(&self, id: i64) -> Result<Option<MyTag>> {
         Ok(self
-            .query("SELECT * FROM myTag WHERE myTag_id=?", [id])?
+            .query("SELECT myTag_id,name,attribute,myTag_id_parent,sequenceNo FROM myTag WHERE myTag_id=?", [id])?
             .first()
             .map(my_tag))
     }
@@ -277,11 +283,11 @@ impl OneLibraryAdapter {
         )
     }
     pub fn find_my_tags_for_track(&self, id: i64) -> Result<Vec<MyTag>> {
-        Ok(self.query("SELECT t.* FROM myTag t INNER JOIN myTag_content tc ON t.myTag_id=tc.myTag_id WHERE tc.content_id=?",[id])?.iter().map(my_tag).collect())
+        Ok(self.query("SELECT t.myTag_id,t.name,t.attribute,t.myTag_id_parent,t.sequenceNo FROM myTag t INNER JOIN myTag_content tc ON t.myTag_id=tc.myTag_id WHERE tc.content_id=?",[id])?.iter().map(my_tag).collect())
     }
     pub fn find_history_sessions(&self) -> Result<Vec<HistorySession>> {
         Ok(self
-            .query("SELECT * FROM history ORDER BY sequenceNo", [])?
+            .query("SELECT history_id,name,history_id_parent,sequenceNo FROM history ORDER BY sequenceNo", [])?
             .iter()
             .map(|r| HistorySession {
                 id: integer(r, "history_id"),
@@ -299,7 +305,7 @@ impl OneLibraryAdapter {
     }
     pub fn find_hot_cue_bank_lists(&self) -> Result<Vec<HotCueBankList>> {
         Ok(self
-            .query("SELECT * FROM hotCueBankList ORDER BY sequenceNo", [])?
+            .query("SELECT hotCueBankList_id,name,hotCueBankList_id_parent,sequenceNo FROM hotCueBankList ORDER BY sequenceNo", [])?
             .iter()
             .map(|r| HotCueBankList {
                 id: integer(r, "hotCueBankList_id"),
@@ -317,7 +323,10 @@ impl OneLibraryAdapter {
     }
     pub fn find_menu_items(&self) -> Result<Vec<MenuItem>> {
         Ok(self
-            .query("SELECT * FROM menuItem ORDER BY menuItem_id", [])?
+            .query(
+                "SELECT menuItem_id,kind,name FROM menuItem ORDER BY menuItem_id",
+                [],
+            )?
             .iter()
             .map(|r| MenuItem {
                 id: integer(r, "menuItem_id"),
@@ -327,14 +336,14 @@ impl OneLibraryAdapter {
             .collect())
     }
     pub fn find_visible_categories(&self) -> Result<Vec<Category>> {
-        Ok(self.query("SELECT c.*,m.name AS menuName,m.kind AS menuKind FROM category c LEFT JOIN menuItem m ON c.menuItem_id=m.menuItem_id WHERE c.isVisible=1 ORDER BY c.sequenceNo",[])?.iter().map(|r|Category{id:integer(r,"category_id"),menu_item_id:integer(r,"menuItem_id"),name:text(r,"menuName"),kind:integer(r,"menuKind"),is_visible:integer(r,"isVisible")!=0}).collect())
+        Ok(self.query("SELECT c.category_id,c.menuItem_id,c.sequenceNo,c.isVisible,m.name AS menuName,m.kind AS menuKind FROM category c LEFT JOIN menuItem m ON c.menuItem_id=m.menuItem_id WHERE c.isVisible=1 ORDER BY c.sequenceNo",[])?.iter().map(|r|Category{id:integer(r,"category_id"),menu_item_id:integer(r,"menuItem_id"),name:text(r,"menuName"),kind:integer(r,"menuKind"),is_visible:integer(r,"isVisible")!=0}).collect())
     }
     pub fn find_visible_sort_options(&self) -> Result<Vec<SortOption>> {
-        Ok(self.query("SELECT s.*,m.name AS menuName,m.kind AS menuKind FROM sort s LEFT JOIN menuItem m ON s.menuItem_id=m.menuItem_id WHERE s.isVisible=1 ORDER BY s.sequenceNo",[])?.iter().map(|r|SortOption{id:integer(r,"sort_id"),menu_item_id:integer(r,"menuItem_id"),name:text(r,"menuName"),kind:integer(r,"menuKind"),is_visible:integer(r,"isVisible")!=0,is_selected_as_sub_column:integer(r,"isSelectedAsSubColumn")!=0}).collect())
+        Ok(self.query("SELECT s.sort_id,s.menuItem_id,s.sequenceNo,s.isVisible,s.isSelectedAsSubColumn,m.name AS menuName,m.kind AS menuKind FROM sort s LEFT JOIN menuItem m ON s.menuItem_id=m.menuItem_id WHERE s.isVisible=1 ORDER BY s.sequenceNo",[])?.iter().map(|r|SortOption{id:integer(r,"sort_id"),menu_item_id:integer(r,"menuItem_id"),name:text(r,"menuName"),kind:integer(r,"menuKind"),is_visible:integer(r,"isVisible")!=0,is_selected_as_sub_column:integer(r,"isSelectedAsSubColumn")!=0}).collect())
     }
     pub fn get_property(&self) -> Result<Option<DeviceProperty>> {
         Ok(self
-            .query("SELECT * FROM property LIMIT 1", [])?
+            .query("SELECT deviceName,dbVersion,numberOfContents,createdDate,backGroundColorType FROM property LIMIT 1", [])?
             .first()
             .map(|r| DeviceProperty {
                 device_name: text(r, "deviceName"),

@@ -10,17 +10,21 @@ fn canonical(value: &mut Value) {
 }
 #[test]
 fn all_adapter_queries_match_actual_pinned_typescript_encrypted_fixture_outputs() {
-    run(false)
+    run(false, false)
 }
 #[test]
 fn mutated_nullable_edge_queries_match_actual_typescript() {
-    run(true)
+    run(true, false)
 }
-fn run(edges: bool) {
+#[test]
+fn unknown_extension_blob_columns_do_not_change_adapter_outputs() {
+    run(false, true)
+}
+fn run(edges: bool, extensions: bool) {
     let scratch = tempfile::tempdir().unwrap();
     let file = scratch.path().join("fixture.db");
     std::fs::write(&file, include_bytes!("../fixtures/test-onelibrary.db")).unwrap();
-    if edges {
+    if edges || extensions {
         let writer = rusqlite::Connection::open(&file).unwrap();
         onelibrary_connect_rs::connection::set_key(
             &writer,
@@ -28,7 +32,11 @@ fn run(edges: bool) {
         )
         .unwrap();
         writer
-            .execute_batch(include_str!("../fixtures/mutations.sql"))
+            .execute_batch(if extensions {
+                include_str!("../fixtures/extensions.sql")
+            } else {
+                include_str!("../fixtures/mutations.sql")
+            })
             .unwrap();
     }
     let mut db = OneLibraryAdapter::open_with_options(
@@ -88,4 +96,29 @@ fn run(edges: bool) {
     db.close();
     db.close();
     assert_eq!(db.find_track(1), Err(Error::Closed));
+}
+
+#[test]
+fn known_scalar_blob_corruption_is_not_silently_coerced() {
+    for (table, column, query_track) in [("content", "title", true), ("cue", "inUsec", false)] {
+        let scratch = tempfile::tempdir().unwrap();
+        let file = scratch.path().join("fixture.db");
+        std::fs::write(&file, include_bytes!("../fixtures/test-onelibrary.db")).unwrap();
+        let writer = rusqlite::Connection::open(&file).unwrap();
+        onelibrary_connect_rs::connection::set_key(
+            &writer,
+            &onelibrary_connect_rs::get_encryption_key().unwrap(),
+        )
+        .unwrap();
+        writer
+            .execute(&format!("UPDATE {table} SET {column}=x'000102ff'"), [])
+            .unwrap();
+        drop(writer);
+        let db = OneLibraryAdapter::open(&file).unwrap();
+        if query_track {
+            assert_eq!(db.find_all_tracks(), Err(Error::QueryFailed));
+        } else {
+            assert_eq!(db.find_cues(1), Err(Error::QueryFailed));
+        }
+    }
 }
